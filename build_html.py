@@ -317,16 +317,42 @@ def build_html(images):
                 padding: 10px;
             }}
 
+            header h1 {{
+                font-size: 1.4em;
+            }}
+
             .section {{
                 padding: 15px;
+            }}
+
+            .section h2 {{
+                flex-wrap: wrap;
+                font-size: 1.1em;
+            }}
+
+            .indicator-grid {{
+                grid-template-columns: 1fr;
+                grid-auto-flow: row;
+            }}
+
+            .button-row {{
+                flex-wrap: wrap;
+                justify-content: center;
             }}
 
             .step {{
                 flex-direction: column;
             }}
 
+            .diagram-row {{
+                flex-direction: column;
+                align-items: center;
+            }}
+
             .diagram-row img {{
                 max-width: 100%;
+                height: auto;
+                max-height: 180px;
             }}
         }}
 
