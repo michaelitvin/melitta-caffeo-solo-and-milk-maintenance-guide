@@ -1,0 +1,45 @@
+label_name,bbox_x,bbox_y,bbox_width,bbox_height,image_name,image_width,image_height
+A,123,199,1547,1256,page2_machine_overview.png,1749,2481
+B,305,254,604,433,page3_component_details.png,1749,2481
+C,918,256,607,424,page3_component_details.png,1749,2481
+D,305,724,604,422,page3_component_details.png,1749,2481
+E,915,724,612,427,page3_component_details.png,1749,2481
+F,226,1191,268,427,page3_component_details.png,1749,2481
+G,508,1191,402,436,page3_component_details.png,1749,2481
+H,909,1185,610,433,page3_component_details.png,1749,2481
+J,314,1658,592,433,page3_component_details.png,1749,2481
+K,909,1658,615,430,page3_component_details.png,1749,2481
+3 on/off,1248,1260,56,58,page5_components.png,1749,2481
+5 coffee dispensing,1430,1403,114,45,page5_components.png,1749,2481
+6 coffee strength,1394,1468,58,53,page5_components.png,1749,2481
+9 steam dispensing,1436,1663,48,57,page5_components.png,1749,2481
+machine overview figure A legend,866,941,760,1163,page5_components.png,1749,2481
+machine overview figure A legend item,886,1040,730,154,page5_components.png,1749,2481
+machine overview figure A legend item,886,1179,730,71,page5_components.png,1749,2481
+machine overview figure A legend item,886,1239,730,90,page5_components.png,1749,2481
+machine overview figure A legend item,875,1319,744,71,page5_components.png,1749,2481
+machine overview figure A legend item,875,1377,745,85,page5_components.png,1749,2481
+machine overview figure A legend item,869,1449,748,90,page5_components.png,1749,2481
+machine overview figure A legend item,884,1528,734,66,page5_components.png,1749,2481
+machine overview figure A legend item,890,1584,729,69,page5_components.png,1749,2481
+machine overview figure A legend item,889,1640,729,92,page5_components.png,1749,2481
+machine overview figure A legend item,893,1721,729,84,page5_components.png,1749,2481
+machine overview figure A legend item,892,1797,728,104,page5_components.png,1749,2481
+machine overview figure A legend item,883,1895,737,68,page5_components.png,1749,2481
+machine overview figure A legend item,893,1951,727,151,page5_components.png,1749,2481
+light icon,157,394,72,79,page6_display_icons.png,1749,2481
+light icon,154,585,74,75,page6_display_icons.png,1749,2481
+light icon,157,739,70,72,page6_display_icons.png,1749,2481
+light icon,154,901,75,75,page6_display_icons.png,1749,2481
+light icon,152,1131,77,74,page6_display_icons.png,1749,2481
+light icon,154,1356,75,75,page6_display_icons.png,1749,2481
+light icon,156,1577,74,75,page6_display_icons.png,1749,2481
+light icon,157,1922,72,75,page6_display_icons.png,1749,2481
+light icon with explanation,135,313,722,235,page6_display_icons.png,1749,2481
+light icon with explanation,135,541,724,161,page6_display_icons.png,1749,2481
+light icon with explanation,135,695,720,159,page6_display_icons.png,1749,2481
+light icon with explanation,129,850,734,191,page6_display_icons.png,1749,2481
+light icon with explanation,134,1030,727,273,page6_display_icons.png,1749,2481
+light icon with explanation,134,1295,726,196,page6_display_icons.png,1749,2481
+light icon with explanation,135,1483,724,271,page6_display_icons.png,1749,2481
+light icon with explanation,137,1748,722,436,page6_display_icons.png,1749,2481
