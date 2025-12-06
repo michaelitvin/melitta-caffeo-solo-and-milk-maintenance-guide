@@ -4,8 +4,11 @@
 import base64
 import os
 
+from weasyprint import HTML
+
 ICONS_DIR = "assets/icons"
 OUTPUT_FILE = "melitta_caffeo_solo_milk_maintenance_guide.html"
+PDF_FILE = "melitta_caffeo_solo_milk_maintenance_guide.pdf"
 
 
 def img_to_base64(filepath):
@@ -131,6 +134,17 @@ def build_html(images):
             border-radius: 20px;
             font-weight: 500;
             margin-left: 8px;
+        }}
+
+        .time {{
+            display: inline-block;
+            background: #666;
+            color: white;
+            font-size: 0.85em;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-weight: 500;
+            white-space: nowrap;
         }}
 
         .steps {{
@@ -315,6 +329,7 @@ def build_html(images):
         @media (max-width: 600px) {{
             body {{
                 padding: 10px;
+                font-size: 14px;
             }}
 
             header h1 {{
@@ -391,7 +406,7 @@ def build_html(images):
                 border-bottom-color: #333;
             }}
 
-            .frequency, .duration {{
+            .frequency, .duration, .time {{
                 background: none;
                 color: #333;
                 border: 1px solid #333;
@@ -569,7 +584,7 @@ def build_html(images):
             <div class="step">
                 <div class="step-number">3</div>
                 <div class="step-content">
-                    <p>Turn valve clockwise for 5 seconds, then close</p>
+                    <p>Turn valve clockwise <span class="time">🕐 5 sec</span>, close, wait <span class="time">🕐 30 sec</span></p>
                 </div>
             </div>
         </div>
@@ -693,7 +708,7 @@ def build_html(images):
             <div class="step">
                 <div class="step-number">5</div>
                 <div class="step-content">
-                    <p><strong>Refill water</strong> to MAX, press <img src="{images['btn_steam']}" alt="steam" style="height:18px;vertical-align:middle"> to continue</p>
+                    <p><strong>Refill water</strong> to MAX, press <img src="{images['btn_steam']}" alt="steam" style="height:18px;vertical-align:middle"> to continue <span class="time">🕐 ~5 min</span></p>
                 </div>
             </div>
             <div class="step">
@@ -740,35 +755,41 @@ def build_html(images):
             <div class="step">
                 <div class="step-number">4</div>
                 <div class="step-content">
-                    <p><strong>Empty water reservoir</strong>, add 100ml descaler + fill to MAX (Melitta ANTI CALC)</p>
+                    <p><strong>Empty and reinsert</strong> drip tray</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">5</div>
                 <div class="step-content">
-                    <p>Press <img src="{images['btn_steam']}" alt="steam" style="height:18px;vertical-align:middle"> to start (~15 min)</p>
+                    <p><strong>Empty water reservoir</strong>, add 100ml descaler + fill to MAX (Melitta ANTI CALC)</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">6</div>
                 <div class="step-content">
-                    <p>When <img src="{images['icon_steam']}" alt="" style="height:20px;vertical-align:middle"> lights: <strong>turn valve clockwise</strong> until stop (~10 min)</p>
+                    <p>Press <img src="{images['btn_steam']}" alt="steam" style="height:18px;vertical-align:middle"> to start <span class="time">🕐 ~15 min</span></p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">7</div>
                 <div class="step-content">
-                    <p><strong>Empty all containers</strong>, rinse reservoir, fill with fresh water</p>
+                    <p>When <img src="{images['icon_steam']}" alt="" style="height:20px;vertical-align:middle"> lights: <strong>turn valve clockwise</strong> until stop <span class="time">🕐 ~10 min</span></p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">8</div>
                 <div class="step-content">
-                    <p>Press <img src="{images['btn_steam']}" alt="steam" style="height:18px;vertical-align:middle"> for final rinse, <strong>close valve</strong> when <img src="{images['icon_steam']}" alt="" style="height:20px;vertical-align:middle"> lights</p>
+                    <p><strong>Empty all containers</strong>, rinse reservoir, fill with fresh water</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">9</div>
+                <div class="step-content">
+                    <p>Press <img src="{images['btn_steam']}" alt="steam" style="height:18px;vertical-align:middle"> for final rinse, <strong>close valve</strong> when <img src="{images['icon_steam']}" alt="" style="height:20px;vertical-align:middle"> lights</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">10</div>
                 <div class="step-content">
                     <p>When <img src="{images['btn_power']}" alt="" style="height:18px;vertical-align:middle"> lights: <strong>done!</strong> Reinstall water filter if used</p>
                 </div>
@@ -880,6 +901,14 @@ def main():
     file_size = os.path.getsize(OUTPUT_FILE)
     print(f"\nCreated: {OUTPUT_FILE}")
     print(f"Size: {file_size / 1024:.1f} KB")
+
+    print("Generating PDF...")
+    # Remove clock emoji for PDF (emoji doesn't render in WeasyPrint)
+    pdf_html = html.replace("🕐 ", "")
+    HTML(string=pdf_html).write_pdf(PDF_FILE)
+    pdf_size = os.path.getsize(PDF_FILE)
+    print(f"Created: {PDF_FILE}")
+    print(f"Size: {pdf_size / 1024:.1f} KB")
 
 
 if __name__ == "__main__":
