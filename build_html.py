@@ -7,8 +7,9 @@ import os
 from weasyprint import HTML
 
 ICONS_DIR = "assets/icons"
-OUTPUT_FILE = "melitta_caffeo_solo_milk_maintenance_guide.html"
-PDF_FILE = "melitta_caffeo_solo_milk_maintenance_guide.pdf"
+OUTPUT_DIR = "docs"
+OUTPUT_FILE = f"{OUTPUT_DIR}/melitta_caffeo_solo_milk_maintenance_guide.html"
+PDF_FILE = f"{OUTPUT_DIR}/melitta_caffeo_solo_milk_maintenance_guide.pdf"
 
 
 def img_to_base64(filepath):
@@ -572,19 +573,25 @@ def build_html(images):
             <div class="step">
                 <div class="step-number">1</div>
                 <div class="step-content">
-                    <p>Fill vessel with clear water, immerse steam pipe tip</p>
+                    <p><strong>Switch on</strong> the appliance</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">2</div>
                 <div class="step-content">
-                    <p>Press <img src="{images['btn_steam']}" alt="steam" style="height:20px;vertical-align:middle"> button, wait for <img src="{images['icon_steam']}" alt="" style="height:20px;vertical-align:middle"> to illuminate</p>
+                    <p>Fill vessel halfway with clear water, immerse steam pipe tip</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">3</div>
                 <div class="step-content">
-                    <p>Turn valve clockwise <span class="time">🕐 5 sec</span>, close, wait <span class="time">🕐 30 sec</span></p>
+                    <p>Press <img src="{images['btn_steam']}" alt="steam" style="height:20px;vertical-align:middle"> button. <img src="{images['icon_steam']}" alt="" style="height:20px;vertical-align:middle"> flashes while heating, then illuminates.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <p>Turn valve clockwise <span class="time">🕐 5 sec</span>, close. Wait <span class="time">🕐 30 sec</span> or press <img src="{images['btn_steam']}" alt="steam" style="height:18px;vertical-align:middle"></p>
                 </div>
             </div>
         </div>
@@ -599,25 +606,37 @@ def build_html(images):
             <div class="step">
                 <div class="step-number">1</div>
                 <div class="step-content">
-                    <p><strong>Twist off</strong> steam pipe (turn in arrow direction)</p>
+                    <p><strong>Let cool down</strong>, wipe steam pipe on outside with damp cloth</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">2</div>
                 <div class="step-content">
-                    <p><strong>Pull nozzle</strong> out of steam pipe</p>
+                    <p><strong>Twist off</strong> steam pipe (turn in arrow direction)</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">3</div>
                 <div class="step-content">
-                    <p><strong>Clean nozzle</strong> with pointed object or brush</p>
+                    <p><strong>Pull nozzle</strong> out of steam pipe</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">4</div>
                 <div class="step-content">
-                    <p><strong>Rinse all parts</strong> with water, reassemble</p>
+                    <p><strong>Rinse all parts</strong> with water and dishwashing detergent if necessary</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <p><strong>Clean nozzle</strong> with pointed object or brush</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">6</div>
+                <div class="step-content">
+                    <p><strong>Reassemble:</strong> push nozzle into steam pipe, twist on (opposite direction)</p>
                 </div>
             </div>
         </div>
@@ -644,25 +663,31 @@ def build_html(images):
             <div class="step">
                 <div class="step-number">2</div>
                 <div class="step-content">
-                    <p><strong>Press red button</strong> on handle, turn clockwise, pull out</p>
+                    <p><strong>Press and hold red button</strong> on handle, turn clockwise until stop, pull out</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">3</div>
                 <div class="step-content">
-                    <p><strong>Rinse thoroughly</strong> with clear water on all sides</p>
+                    <p><strong>Rinse thoroughly</strong> with clear water on all sides. Ensure brewing chamber area is free of coffee residues.</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">4</div>
                 <div class="step-content">
-                    <p><strong>Let dry</strong>, remove coffee residues from machine</p>
+                    <p><strong>Let dry</strong>, remove coffee residues from machine interior</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">5</div>
                 <div class="step-content">
-                    <p><strong>Reinsert</strong> brewing unit, turn counterclockwise until locked</p>
+                    <p><strong>Reinsert:</strong> press and hold red button, turn counterclockwise until stop</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">6</div>
+                <div class="step-content">
+                    <p><strong>Insert cover</strong> until it clicks in</p>
                 </div>
             </div>
         </div>
@@ -689,32 +714,74 @@ def build_html(images):
             <div class="step">
                 <div class="step-number">2</div>
                 <div class="step-content">
-                    <p>Hold <img src="{images['btn_coffee']}" alt="coffee" style="height:18px;vertical-align:middle"> + <img src="{images['btn_power']}" alt="power" style="height:18px;vertical-align:middle"> for 2 sec &rarr; <img src="{images['icon_clean']}" alt="" style="height:20px;vertical-align:middle"> flashes</p>
+                    <p>Hold <img src="{images['btn_power']}" alt="power" style="height:18px;vertical-align:middle"> + <img src="{images['btn_coffee']}" alt="coffee" style="height:18px;vertical-align:middle"> for >2 sec &rarr; <img src="{images['icon_clean']}" alt="" style="height:20px;vertical-align:middle"> flashes, <img src="{images['icon_drip_tray']}" alt="" style="height:20px;vertical-align:middle"> illuminates</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">3</div>
                 <div class="step-content">
-                    <p><strong>Empty drip tray</strong>, reinsert without grounds container</p>
+                    <p><strong>Empty drip tray</strong>, reinsert <em>without</em> grounds container. Place grounds container under outlet.</p>
                 </div>
             </div>
+        </div>
+
+        <h3>
+            <img src="{images['icon_clean_phase_1']}" alt="" style="height:24px">
+            Phase 1
+        </h3>
+        <div class="steps">
             <div class="step">
                 <div class="step-number">4</div>
                 <div class="step-content">
-                    <p>When <img src="{images['btn_power']}" alt="" style="height:18px;vertical-align:middle"> lights: <strong>remove brewing unit</strong>, insert cleaning tab, reinstall</p>
+                    <p>Two rinsing processes will be performed.<br>When <img src="{images['icon_power']}" alt="" style="height:18px;vertical-align:middle"> lights:</p>
+                    <p><strong>Remove brewing unit</strong>, <a href="#brewing" style="color:#e74c3c;">clean it</a>, insert cleaning tab, reinstall</p>
                     <img src="{images['diagram_brewing_unit_clean_tab']}" alt="Insert cleaning tab" class="diagram">
                 </div>
             </div>
+        </div>
+
+        <h3>
+            <img src="{images['icon_clean_phase_2']}" alt="" style="height:24px">
+            Phase 2
+        </h3>
+        <div class="steps">
             <div class="step">
                 <div class="step-number">5</div>
                 <div class="step-content">
-                    <p><strong>Refill water</strong> to MAX, press <img src="{images['btn_steam']}" alt="steam" style="height:18px;vertical-align:middle"> to continue <span class="time">🕐 ~5 min</span></p>
+                    <p>When <img src="{images['icon_water']}" alt="" style="height:18px;vertical-align:middle"> lights: <strong>Refill water</strong> to MAX</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">6</div>
                 <div class="step-content">
-                    <p>When complete: <strong>empty and reinsert</strong> drip tray + grounds container</p>
+                    <p>Press <img src="{images['btn_steam']}" alt="steam" style="height:18px;vertical-align:middle"> to continue <span class="time">🕐 ~5 min</span></p>
+                </div>
+            </div>
+        </div>
+
+        <h3>
+            <img src="{images['icon_clean_phase_3']}" alt="" style="height:24px">
+            Phase 3
+        </h3>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">7</div>
+                <div class="step-content">
+                    <p>When <img src="{images['icon_drip_tray']}" alt="" style="height:18px;vertical-align:middle"> lights: <strong>Empty drip tray and grounds container</strong></p>
+                    <p>Reinsert drip tray <em>without</em> grounds container. Place grounds container under outlet.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">8</div>
+                <div class="step-content">
+                    <p>Program continues (middle bean flashing) <span class="time">🕐 ~5 min</span></p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">9</div>
+                <div class="step-content">
+                    <p>When <img src="{images['icon_drip_tray']}" alt="" style="height:18px;vertical-align:middle"> lights: <strong>Empty and reinsert</strong> drip tray + grounds container as usual</p>
+                    <p><strong>Done!</strong></p>
                 </div>
             </div>
         </div>
@@ -728,7 +795,7 @@ def build_html(images):
             <span class="frequency monthly">Every 3 months</span>
             <span class="duration">🕐 ~30 min</span>
         </h2>
-        <div class="supplies"><strong>Required:</strong> Melitta ANTI CALC descaler</div>
+        <div class="supplies"><strong>Required:</strong> Melitta ANTI CALC descaler + supplied hose</div>
         <div class="warning">Descaling agent can cause skin irritation. Follow safety instructions on packaging.</div>
 
         <img src="{images['diagram_descale_setup']}" alt="Descaling setup" style="height:180px;width:auto;border-radius:8px;margin:15px 0;border:1px solid #eee">
@@ -737,7 +804,7 @@ def build_html(images):
             <div class="step">
                 <div class="step-number">1</div>
                 <div class="step-content">
-                    <p><strong>Attach hose</strong> to steam pipe, place in grounds container</p>
+                    <p><strong>Switch off</strong>. Pull hose ~1cm over steam pipe. Place grounds container to the right with hose protruding into it.</p>
                 </div>
             </div>
             <div class="step">
@@ -749,19 +816,26 @@ def build_html(images):
             <div class="step">
                 <div class="step-number">3</div>
                 <div class="step-content">
-                    <p>Hold <img src="{images['btn_steam']}" alt="steam" style="height:18px;vertical-align:middle"> + <img src="{images['btn_power']}" alt="power" style="height:18px;vertical-align:middle"> for 3 sec &rarr; <img src="{images['icon_descale']}" alt="" style="height:20px;vertical-align:middle"> flashes</p>
+                    <p>Hold <img src="{images['btn_power']}" alt="power" style="height:18px;vertical-align:middle"> + <img src="{images['btn_steam']}" alt="steam" style="height:18px;vertical-align:middle"> for 3 sec &rarr; <img src="{images['icon_descale']}" alt="" style="height:20px;vertical-align:middle"> flashes, <img src="{images['icon_drip_tray']}" alt="" style="height:20px;vertical-align:middle"> illuminates</p>
                 </div>
             </div>
+        </div>
+
+        <h3>
+            <img src="{images['icon_clean_phase_1']}" alt="" style="height:24px">
+            Phase 1
+        </h3>
+        <div class="steps">
             <div class="step">
                 <div class="step-number">4</div>
                 <div class="step-content">
-                    <p><strong>Empty and reinsert</strong> drip tray</p>
+                    <p><strong>Empty and reinsert</strong> drip tray. <img src="{images['icon_water']}" alt="" style="height:18px;vertical-align:middle"> illuminates.</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">5</div>
                 <div class="step-content">
-                    <p><strong>Empty water reservoir</strong>, add 100ml descaler + fill to MAX (Melitta ANTI CALC)</p>
+                    <p><strong>Completely empty</strong> water reservoir. Add descaler per packaging instructions, fill to MAX.</p>
                 </div>
             </div>
             <div class="step">
@@ -770,28 +844,67 @@ def build_html(images):
                     <p>Press <img src="{images['btn_steam']}" alt="steam" style="height:18px;vertical-align:middle"> to start <span class="time">🕐 ~15 min</span></p>
                 </div>
             </div>
+        </div>
+
+        <h3>
+            <img src="{images['icon_clean_phase_2']}" alt="" style="height:24px">
+            Phase 2
+        </h3>
+        <div class="steps">
             <div class="step">
                 <div class="step-number">7</div>
                 <div class="step-content">
-                    <p>When <img src="{images['icon_steam']}" alt="" style="height:20px;vertical-align:middle"> lights: <strong>turn valve clockwise</strong> until stop <span class="time">🕐 ~10 min</span></p>
+                    <p>When <img src="{images['icon_steam']}" alt="" style="height:20px;vertical-align:middle"> lights: Ensure grounds container is under steam pipe with hose</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">8</div>
                 <div class="step-content">
-                    <p><strong>Empty all containers</strong>, rinse reservoir, fill with fresh water</p>
+                    <p><strong>Turn valve clockwise</strong> until stop. <img src="{images['icon_steam']}" alt="" style="height:18px;vertical-align:middle"> flashing. Water flows intermittently into container. <span class="time">🕐 ~10 min</span></p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">9</div>
                 <div class="step-content">
-                    <p>Press <img src="{images['btn_steam']}" alt="steam" style="height:18px;vertical-align:middle"> for final rinse, <strong>close valve</strong> when <img src="{images['icon_steam']}" alt="" style="height:20px;vertical-align:middle"> lights</p>
+                    <p>When <img src="{images['icon_drip_tray']}" alt="" style="height:18px;vertical-align:middle"> lights: <strong>Empty drip tray and grounds container</strong></p>
+                    <p>Reinsert drip tray, put grounds container back under steam pipe</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">10</div>
                 <div class="step-content">
-                    <p>When <img src="{images['btn_power']}" alt="" style="height:18px;vertical-align:middle"> lights: <strong>done!</strong> Reinstall water filter if used</p>
+                    <p><strong>Rinse reservoir thoroughly</strong>, fill with fresh water to MAX</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">11</div>
+                <div class="step-content">
+                    <p>Press <img src="{images['btn_steam']}" alt="steam" style="height:18px;vertical-align:middle"> to continue. <img src="{images['icon_steam']}" alt="" style="height:18px;vertical-align:middle"> flashing. Water flows into grounds container.</p>
+                </div>
+            </div>
+        </div>
+
+        <h3>
+            <img src="{images['icon_clean_phase_3']}" alt="" style="height:24px">
+            Phase 3
+        </h3>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">12</div>
+                <div class="step-content">
+                    <p>When <img src="{images['icon_steam']}" alt="" style="height:20px;vertical-align:middle"> lights: <strong>Turn valve counterclockwise</strong> until stop. Water flows into drip tray.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">13</div>
+                <div class="step-content">
+                    <p>When <img src="{images['icon_drip_tray']}" alt="" style="height:18px;vertical-align:middle"> lights: <strong>Empty and reinsert</strong> drip tray + grounds container</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">14</div>
+                <div class="step-content">
+                    <p>When <img src="{images['icon_power']}" alt="" style="height:18px;vertical-align:middle"> lights: <strong>Done!</strong> Reinstall water filter if used.</p>
                 </div>
             </div>
         </div>
@@ -815,13 +928,13 @@ def build_html(images):
             <div class="step">
                 <div class="step-number">2</div>
                 <div class="step-content">
-                    <p><strong>Switch off</strong>, hold <img src="{images['btn_strength']}" alt="strength" style="height:18px;vertical-align:middle"> + <img src="{images['btn_power']}" alt="power" style="height:18px;vertical-align:middle"> for 3 sec</p>
+                    <p><strong>Switch off</strong>, hold <img src="{images['btn_power']}" alt="power" style="height:18px;vertical-align:middle"> + <img src="{images['btn_steam']}" alt="steam" style="height:18px;vertical-align:middle"> for 3 sec &rarr; <img src="{images['icon_filter']}" alt="" style="height:18px;vertical-align:middle"> flashes</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">3</div>
                 <div class="step-content">
-                    <p><strong>Empty drip tray</strong>, reinsert without grounds container</p>
+                    <p><strong>Empty drip tray</strong>, reinsert without grounds container. <img src="{images['icon_drip_tray']}" alt="" style="height:18px;vertical-align:middle"> illuminates.</p>
                 </div>
             </div>
             <div class="step">
@@ -833,53 +946,141 @@ def build_html(images):
             <div class="step">
                 <div class="step-number">5</div>
                 <div class="step-content">
-                    <p><strong>Fill reservoir</strong> to MAX, reinsert</p>
+                    <p><strong>Fill reservoir</strong> to MAX, reinsert. <img src="{images['icon_water']}" alt="" style="height:18px;vertical-align:middle"> illuminates.</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">6</div>
                 <div class="step-content">
-                    <p><strong>Place container</strong> under steam pipe, turn valve clockwise until water flows</p>
+                    <p><strong>Place grounds container</strong> under steam pipe, turn valve clockwise. <img src="{images['icon_steam']}" alt="" style="height:18px;vertical-align:middle"> flashes, water flows.</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">7</div>
                 <div class="step-content">
-                    <p>When <img src="{images['icon_steam']}" alt="" style="height:20px;vertical-align:middle"> lights: <strong>close valve</strong> &rarr; Ready!</p>
+                    <p>When <img src="{images['icon_steam']}" alt="" style="height:20px;vertical-align:middle"> lights: <strong>close valve</strong>. <img src="{images['icon_power']}" alt="" style="height:18px;vertical-align:middle"> + <img src="{images['icon_filter']}" alt="" style="height:18px;vertical-align:middle"> illuminate. Water hardness auto-set to level 1.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">8</div>
+                <div class="step-content">
+                    <p><strong>Empty and reinsert</strong> grounds container. Ready!</p>
                 </div>
             </div>
         </div>
         <div class="tip">Water may be cloudy during first rinse (activated carbon). This is normal.</div>
     </div>
 
-    <!-- Steam Pipe Positions -->
+    <!-- All Procedures Reference -->
     <div class="section">
-        <h2>
-            <img src="{images['icon_steam']}" alt="">
-            Steam Pipe Positions
-        </h2>
-        <img src="{images['diagram_steam_positions']}" alt="Steam pipe positions" style="height:180px;width:auto;border-radius:8px;margin:15px 0;border:1px solid #eee">
-        <div class="indicator-grid">
-            <div class="indicator">
-                <strong style="font-size:1.5em;margin-right:10px">&darr;</strong>
-                <div class="indicator-text">
-                    <strong>Position 1 (Down)</strong>
-                    <span>For frothing milk</span>
-                </div>
-            </div>
-            <div class="indicator">
-                <strong style="font-size:1.5em;margin-right:10px">&uarr;</strong>
-                <div class="indicator-text">
-                    <strong>Position 2 (Up)</strong>
-                    <span>For heating milk / hot water</span>
-                </div>
-            </div>
-        </div>
+        <h2>All Procedures</h2>
+        <p style="margin-bottom:15px;color:#666;">Quick reference to all procedures in the <a href="MelittaCaffeoSoloAndMilkManual.pdf" style="color:#e74c3c;">original manual</a>.</p>
+        <table style="width:100%;border-collapse:collapse;font-size:0.9em;">
+            <thead>
+                <tr style="border-bottom:2px solid #e74c3c;">
+                    <th style="text-align:left;padding:10px 8px;">Procedure</th>
+                    <th style="text-align:left;padding:10px 8px;">Description</th>
+                    <th style="text-align:center;padding:10px 8px;white-space:nowrap;">Page</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-bottom:1px solid #eee;">
+                    <td style="padding:10px 8px;"><strong>First Use Setup</strong></td>
+                    <td style="padding:10px 8px;">Initial venting and setup before first operation</td>
+                    <td style="padding:10px 8px;text-align:center;"><a href="MelittaCaffeoSoloAndMilkManual.pdf#page=6" style="color:#e74c3c;">19</a></td>
+                </tr>
+                <tr style="border-bottom:1px solid #eee;background:#fafafa;">
+                    <td style="padding:10px 8px;"><strong>Dispensing Coffee</strong></td>
+                    <td style="padding:10px 8px;">Preparing one or two cups, adjusting quantity and strength</td>
+                    <td style="padding:10px 8px;text-align:center;"><a href="MelittaCaffeoSoloAndMilkManual.pdf#page=7" style="color:#e74c3c;">20</a></td>
+                </tr>
+                <tr style="border-bottom:1px solid #eee;">
+                    <td style="padding:10px 8px;"><strong>Preparing Milk Froth</strong></td>
+                    <td style="padding:10px 8px;">Using the steam pipe to froth cold milk</td>
+                    <td style="padding:10px 8px;text-align:center;"><a href="MelittaCaffeoSoloAndMilkManual.pdf#page=8" style="color:#e74c3c;">21</a></td>
+                </tr>
+                <tr style="border-bottom:1px solid #eee;background:#fafafa;">
+                    <td style="padding:10px 8px;"><strong>Heating Milk</strong></td>
+                    <td style="padding:10px 8px;">Using the steam pipe to heat milk without frothing</td>
+                    <td style="padding:10px 8px;text-align:center;"><a href="MelittaCaffeoSoloAndMilkManual.pdf#page=8" style="color:#e74c3c;">21</a></td>
+                </tr>
+                <tr style="border-bottom:1px solid #eee;">
+                    <td style="padding:10px 8px;"><strong>Dispensing Hot Water</strong></td>
+                    <td style="padding:10px 8px;">Getting hot water for tea (max 150ml per cycle)</td>
+                    <td style="padding:10px 8px;text-align:center;"><a href="MelittaCaffeoSoloAndMilkManual.pdf#page=9" style="color:#e74c3c;">22</a></td>
+                </tr>
+                <tr style="border-bottom:1px solid #eee;background:#fafafa;">
+                    <td style="padding:10px 8px;"><strong>Setting Water Hardness</strong></td>
+                    <td style="padding:10px 8px;">Configure hardness level using test strip (affects descaling interval)</td>
+                    <td style="padding:10px 8px;text-align:center;"><a href="MelittaCaffeoSoloAndMilkManual.pdf#page=10" style="color:#e74c3c;">23</a></td>
+                </tr>
+                <tr style="border-bottom:1px solid #eee;">
+                    <td style="padding:10px 8px;"><a href="#daily" style="color:inherit;"><strong>Daily Maintenance</strong></a></td>
+                    <td style="padding:10px 8px;">Empty drip tray, refill beans/water, wipe exterior</td>
+                    <td style="padding:10px 8px;text-align:center;"><a href="MelittaCaffeoSoloAndMilkManual.pdf#page=10" style="color:#e74c3c;">23</a></td>
+                </tr>
+                <tr style="border-bottom:1px solid #eee;background:#fafafa;">
+                    <td style="padding:10px 8px;"><a href="#steam" style="color:inherit;"><strong>Steam Pipe Cleaning</strong></a></td>
+                    <td style="padding:10px 8px;">Rinse after each use, deep clean weekly</td>
+                    <td style="padding:10px 8px;text-align:center;"><a href="MelittaCaffeoSoloAndMilkManual.pdf#page=10" style="color:#e74c3c;">23</a></td>
+                </tr>
+                <tr style="border-bottom:1px solid #eee;">
+                    <td style="padding:10px 8px;"><a href="#brewing" style="color:inherit;"><strong>Brewing Unit Cleaning</strong></a></td>
+                    <td style="padding:10px 8px;">Remove, rinse, and dry brewing unit weekly</td>
+                    <td style="padding:10px 8px;text-align:center;"><a href="MelittaCaffeoSoloAndMilkManual.pdf#page=10" style="color:#e74c3c;">23-24</a></td>
+                </tr>
+                <tr style="border-bottom:1px solid #eee;background:#fafafa;">
+                    <td style="padding:10px 8px;"><a href="#cleaning" style="color:inherit;"><strong>Cleaning Program</strong></a></td>
+                    <td style="padding:10px 8px;">Integrated cleaning with Melitta tabs (~15 min)</td>
+                    <td style="padding:10px 8px;text-align:center;"><a href="MelittaCaffeoSoloAndMilkManual.pdf#page=11" style="color:#e74c3c;">24</a></td>
+                </tr>
+                <tr style="border-bottom:1px solid #eee;">
+                    <td style="padding:10px 8px;"><a href="#descaling" style="color:inherit;"><strong>Descaling Program</strong></a></td>
+                    <td style="padding:10px 8px;">Integrated descaling with Melitta ANTI CALC (~30 min)</td>
+                    <td style="padding:10px 8px;text-align:center;"><a href="MelittaCaffeoSoloAndMilkManual.pdf#page=12" style="color:#e74c3c;">25</a></td>
+                </tr>
+                <tr style="border-bottom:1px solid #eee;background:#fafafa;">
+                    <td style="padding:10px 8px;"><a href="#filter" style="color:inherit;"><strong>Water Filter Replacement</strong></a></td>
+                    <td style="padding:10px 8px;">Install/replace Melitta Claris water filter</td>
+                    <td style="padding:10px 8px;text-align:center;"><a href="MelittaCaffeoSoloAndMilkManual.pdf#page=9" style="color:#e74c3c;">22</a></td>
+                </tr>
+                <tr style="border-bottom:1px solid #eee;">
+                    <td style="padding:10px 8px;"><strong>Energy-Saving Mode</strong></td>
+                    <td style="padding:10px 8px;">Adjust time before appliance enters standby (5-30 min or off)</td>
+                    <td style="padding:10px 8px;text-align:center;"><a href="MelittaCaffeoSoloAndMilkManual.pdf#page=13" style="color:#e74c3c;">26</a></td>
+                </tr>
+                <tr style="border-bottom:1px solid #eee;background:#fafafa;">
+                    <td style="padding:10px 8px;"><strong>Auto-OFF Function</strong></td>
+                    <td style="padding:10px 8px;">Set automatic shutdown time (30 min to 8 hours)</td>
+                    <td style="padding:10px 8px;text-align:center;"><a href="MelittaCaffeoSoloAndMilkManual.pdf#page=13" style="color:#e74c3c;">26</a></td>
+                </tr>
+                <tr style="border-bottom:1px solid #eee;">
+                    <td style="padding:10px 8px;"><strong>Brewing Temperature</strong></td>
+                    <td style="padding:10px 8px;">Adjust coffee temperature (low, medium, high)</td>
+                    <td style="padding:10px 8px;text-align:center;"><a href="MelittaCaffeoSoloAndMilkManual.pdf#page=13" style="color:#e74c3c;">26</a></td>
+                </tr>
+                <tr style="border-bottom:1px solid #eee;background:#fafafa;">
+                    <td style="padding:10px 8px;"><strong>Grinding Fineness</strong></td>
+                    <td style="padding:10px 8px;">Adjust grinder (only while running, after ~1000 cups)</td>
+                    <td style="padding:10px 8px;text-align:center;"><a href="MelittaCaffeoSoloAndMilkManual.pdf#page=13" style="color:#e74c3c;">26-27</a></td>
+                </tr>
+                <tr style="border-bottom:1px solid #eee;">
+                    <td style="padding:10px 8px;"><strong>Venting (for Transport)</strong></td>
+                    <td style="padding:10px 8px;">Remove water from system before transport or storage</td>
+                    <td style="padding:10px 8px;text-align:center;"><a href="MelittaCaffeoSoloAndMilkManual.pdf#page=14" style="color:#e74c3c;">27</a></td>
+                </tr>
+                <tr style="background:#fafafa;">
+                    <td style="padding:10px 8px;"><strong>Troubleshooting</strong></td>
+                    <td style="padding:10px 8px;">Common problems, causes, and solutions</td>
+                    <td style="padding:10px 8px;text-align:center;"><a href="MelittaCaffeoSoloAndMilkManual.pdf#page=15" style="color:#e74c3c;">28</a></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
     <footer style="text-align:center;padding:30px;color:#666;font-size:0.85em;">
         Based on Melitta Caffeo Solo & Milk Operating Instructions<br>
-        For complete instructions, refer to the original manual
+        For complete instructions, refer to the <a href="MelittaCaffeoSoloAndMilkManual.pdf" style="color:#e74c3c;">original manual</a>
     </footer>
 </body>
 </html>'''

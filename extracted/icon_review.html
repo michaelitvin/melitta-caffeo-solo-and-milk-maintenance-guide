@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Icon Mapping Review</title>
+    <style>
+        body { font-family: sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; }
+        h1 { color: #333; }
+        .comparison { display: flex; gap: 40px; margin-bottom: 40px; }
+        .pdf-ref { flex: 1; }
+        .pdf-ref img { max-width: 100%; border: 1px solid #ccc; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; vertical-align: middle; }
+        th { background: #f5f5f5; }
+        .icon-cell { text-align: center; }
+        .icon-cell img { height: 40px; }
+        .status { font-weight: bold; }
+        .ok { color: green; }
+        .check { color: orange; }
+        .wrong { color: red; }
+        input[type="text"] { width: 100%; padding: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Icon Mapping Review</h1>
+
+    <div class="comparison">
+        <div class="pdf-ref">
+            <h2>Original PDF Display Table</h2>
+            <img src="images/picture_7.png" alt="Original PDF display table">
+        </div>
+    </div>
+
+    <h2>Icon Mapping Verification</h2>
+    <p>Please verify each mapping. The "Asset Icon" column shows what I'm using in the markdown.</p>
+
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Function</th>
+            <th class="icon-cell">Asset Icon</th>
+            <th>Filename</th>
+            <th>Status / Notes</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><strong>Power/Ready</strong><br>Illuminated = ready<br>Flashing = heating up</td>
+            <td class="icon-cell"><img src="images/icon_power.png"></td>
+            <td>icon_power.png</td>
+            <td><input type="text" placeholder="OK / Wrong / Notes"></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><strong>Water Filter</strong><br>Illuminated = change filter<br>Flashing = change in process</td>
+            <td class="icon-cell"><img src="images/icon_filter.png"></td>
+            <td>icon_filter.png</td>
+            <td><input type="text" placeholder="OK / Wrong / Notes"></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><strong>Water Reservoir</strong><br>Illuminated = fill reservoir<br>Flashing = insert reservoir</td>
+            <td class="icon-cell"><img src="images/icon_water.png"></td>
+            <td>icon_water.png</td>
+            <td><input type="text" placeholder="OK / Wrong / Notes"></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td><strong>Drip Tray</strong><br>Illuminated = empty tray<br>Flashing = insert tray</td>
+            <td class="icon-cell"><img src="images/icon_drip_tray.png"></td>
+            <td>icon_drip_tray.png</td>
+            <td><input type="text" placeholder="OK / Wrong / Notes"></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td><strong>Coffee Strength (Beans)</strong><br>Illuminated = strength level<br>Flashing = fill beans</td>
+            <td class="icon-cell"><img src="images/icon_beans.png"></td>
+            <td>icon_beans.png</td>
+            <td><input type="text" placeholder="OK / Wrong / Notes"></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td><strong>Clean</strong><br>Illuminated = cleaning running<br>Flashing = clean needed</td>
+            <td class="icon-cell"><img src="images/icon_clean.png"></td>
+            <td>icon_clean.png</td>
+            <td><input type="text" placeholder="OK / Wrong / Notes"></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td><strong>Descale</strong><br>Illuminated = descaling running<br>Flashing = descale needed</td>
+            <td class="icon-cell"><img src="images/icon_descale.png"></td>
+            <td>icon_descale.png</td>
+            <td><input type="text" placeholder="OK / Wrong / Notes"></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td><strong>Steam</strong><br>Illuminated = steam ready<br>Flashing = dispensing</td>
+            <td class="icon-cell"><img src="images/icon_steam.png"></td>
+            <td>icon_steam.png</td>
+            <td><input type="text" placeholder="OK / Wrong / Notes"></td>
+        </tr>
+    </table>
+
+    <h2>Button Icons</h2>
+    <table>
+        <tr>
+            <th>Function</th>
+            <th class="icon-cell">Asset Icon</th>
+            <th>Filename</th>
+            <th>Status / Notes</th>
+        </tr>
+        <tr>
+            <td><strong>Power Button</strong> (ON/OFF)</td>
+            <td class="icon-cell"><img src="images/btn_power.png"></td>
+            <td>btn_power.png</td>
+            <td><input type="text" placeholder="OK / Wrong / Notes"></td>
+        </tr>
+        <tr>
+            <td><strong>Coffee Button</strong> (dispense coffee)</td>
+            <td class="icon-cell"><img src="images/btn_coffee.png"></td>
+            <td>btn_coffee.png</td>
+            <td><input type="text" placeholder="OK / Wrong / Notes"></td>
+        </tr>
+        <tr>
+            <td><strong>Strength Button</strong> (bean strength)</td>
+            <td class="icon-cell"><img src="images/btn_strength.png"></td>
+            <td>btn_strength.png</td>
+            <td><input type="text" placeholder="OK / Wrong / Notes"></td>
+        </tr>
+        <tr>
+            <td><strong>Steam Button</strong></td>
+            <td class="icon-cell"><img src="images/btn_steam.png"></td>
+            <td>btn_steam.png</td>
+            <td><input type="text" placeholder="OK / Wrong / Notes"></td>
+        </tr>
+    </table>
+
+    <h2>Key Questions</h2>
+    <ol>
+        <li>Are the icon designs acceptable, or should I extract the exact icons from the PDF?</li>
+        <li>For instructions like "Press the [?] and [?] buttons simultaneously" - which button icons should be used?</li>
+        <li>When text says "When [?] illuminates" during cleaning/descaling phases - which indicator icon is correct?</li>
+    </ol>
+</body>
+</html>

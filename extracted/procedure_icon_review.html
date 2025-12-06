@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Maintenance Procedure Icon Review</title>
+    <style>
+        body { font-family: sans-serif; max-width: 1400px; margin: 0 auto; padding: 20px; }
+        h1, h2 { color: #333; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 30px; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; vertical-align: middle; }
+        th { background: #f5f5f5; }
+        .icon-cell { text-align: center; width: 80px; }
+        .icon-cell img { height: 40px; }
+        .pdf-icon { background: #fff8e0; }
+        .my-icon { background: #e0f0ff; }
+        .step { background: #f9f9f9; }
+        .wrong { background: #ffe0e0; }
+        .ok { background: #e0ffe0; }
+        input[type="radio"] { margin-right: 5px; }
+        .legend { margin-bottom: 20px; padding: 10px; background: #f0f0f0; }
+        .legend span { margin-right: 20px; padding: 3px 8px; }
+    </style>
+</head>
+<body>
+    <h1>Maintenance Procedure Icon Verification</h1>
+
+    <div class="legend">
+        <strong>Legend:</strong>
+        <span class="pdf-icon">PDF Icon</span>
+        <span class="my-icon">My Assignment</span>
+    </div>
+
+    <h2>Integrated Cleaning Programme</h2>
+    <table>
+        <tr>
+            <th>Step / Context</th>
+            <th class="icon-cell pdf-icon">PDF Shows</th>
+            <th class="icon-cell my-icon">I Used</th>
+            <th>Correct?</th>
+        </tr>
+        <tr>
+            <td class="step">"The cleaning symbol flashes during the entire process"</td>
+            <td class="icon-cell pdf-icon"><img src="images/picture_17.png" title="picture_17.png"></td>
+            <td class="icon-cell my-icon"><img src="images/icon_clean.png" title="icon_clean.png"></td>
+            <td><input type="radio" name="c1" value="ok">OK <input type="radio" name="c1" value="wrong">Wrong</td>
+        </tr>
+        <tr>
+            <td class="step">"Press Power and Steam buttons simultaneously... [Power] flashes, [Clean] illuminates"</td>
+            <td class="icon-cell pdf-icon">-</td>
+            <td class="icon-cell my-icon"><img src="images/icon_power.png"> + <img src="images/icon_clean.png"></td>
+            <td><input type="radio" name="c2" value="ok">OK <input type="radio" name="c2" value="wrong">Wrong</td>
+        </tr>
+        <tr>
+            <td class="step">Cleaning phase 1: "When [?] illuminates, proceed as follows" (remove brewing unit)</td>
+            <td class="icon-cell pdf-icon"><img src="images/picture_18.png" title="picture_18.png"></td>
+            <td class="icon-cell my-icon"><img src="images/icon_drip_tray.png" title="icon_drip_tray.png"></td>
+            <td><input type="radio" name="c3" value="ok">OK <input type="radio" name="c3" value="wrong">Wrong</td>
+        </tr>
+        <tr>
+            <td class="step">Cleaning phase 2: "When [?] illuminates, proceed as follows" (fill water)</td>
+            <td class="icon-cell pdf-icon">-</td>
+            <td class="icon-cell my-icon"><img src="images/icon_water.png" title="icon_water.png"></td>
+            <td><input type="radio" name="c4" value="ok">OK <input type="radio" name="c4" value="wrong">Wrong</td>
+        </tr>
+        <tr>
+            <td class="step">Cleaning phase 3: "When [?] illuminates, proceed as follows" (empty drip tray)</td>
+            <td class="icon-cell pdf-icon"><img src="images/picture_19.png" title="picture_19.png"></td>
+            <td class="icon-cell my-icon"><img src="images/icon_drip_tray.png" title="icon_drip_tray.png"></td>
+            <td><input type="radio" name="c5" value="ok">OK <input type="radio" name="c5" value="wrong">Wrong</td>
+        </tr>
+        <tr>
+            <td class="step">Cleaning phase 4: "the middle bean is flashing"</td>
+            <td class="icon-cell pdf-icon">-</td>
+            <td class="icon-cell my-icon"><img src="images/icon_beans.png" title="icon_beans.png"></td>
+            <td><input type="radio" name="c6" value="ok">OK <input type="radio" name="c6" value="wrong">Wrong</td>
+        </tr>
+        <tr>
+            <td class="step">End of cleaning: "When [?] illuminates" (finished)</td>
+            <td class="icon-cell pdf-icon"><img src="images/picture_20.png" title="picture_20.png"></td>
+            <td class="icon-cell my-icon"><img src="images/icon_power.png" title="icon_power.png"></td>
+            <td><input type="radio" name="c7" value="ok">OK <input type="radio" name="c7" value="wrong">Wrong</td>
+        </tr>
+    </table>
+
+    <h2>Integrated Descaling Programme</h2>
+    <table>
+        <tr>
+            <th>Step / Context</th>
+            <th class="icon-cell pdf-icon">PDF Shows</th>
+            <th class="icon-cell my-icon">I Used</th>
+            <th>Correct?</th>
+        </tr>
+        <tr>
+            <td class="step">"The symbol for descaling flashes during the entire process"</td>
+            <td class="icon-cell pdf-icon"><img src="images/picture_22.png" title="picture_22.png"></td>
+            <td class="icon-cell my-icon"><img src="images/icon_descale.png" title="icon_descale.png"></td>
+            <td><input type="radio" name="d1" value="ok">OK <input type="radio" name="d1" value="wrong">Wrong</td>
+        </tr>
+        <tr>
+            <td class="step">"Press Power and Steam buttons... [Power] flashes, [Descale] illuminates"</td>
+            <td class="icon-cell pdf-icon"><img src="images/picture_23.png" title="picture_23.png"></td>
+            <td class="icon-cell my-icon"><img src="images/icon_power.png"> + <img src="images/icon_descale.png"></td>
+            <td><input type="radio" name="d2" value="ok">OK <input type="radio" name="d2" value="wrong">Wrong</td>
+        </tr>
+        <tr>
+            <td class="step">Descaling phase 1: "Empty and reinsert drip tray. [?] illuminates"</td>
+            <td class="icon-cell pdf-icon"><img src="images/picture_24.png" title="picture_24.png - water icon"></td>
+            <td class="icon-cell my-icon"><img src="images/icon_drip_tray.png" title="icon_drip_tray.png"></td>
+            <td><input type="radio" name="d3" value="ok">OK <input type="radio" name="d3" value="wrong">Wrong<br><small>PDF shows water, I used drip_tray</small></td>
+        </tr>
+        <tr>
+            <td class="step">Descaling phase 2: "When [?] illuminates, proceed as follows"</td>
+            <td class="icon-cell pdf-icon"><img src="images/picture_25.png" title="picture_25.png - steam icon"></td>
+            <td class="icon-cell my-icon"><img src="images/icon_steam.png" title="icon_steam.png"></td>
+            <td><input type="radio" name="d4" value="ok">OK <input type="radio" name="d4" value="wrong">Wrong</td>
+        </tr>
+        <tr>
+            <td class="step">"Turn valve switch... [?] is flashing. Water flows..."</td>
+            <td class="icon-cell pdf-icon">-</td>
+            <td class="icon-cell my-icon"><img src="images/icon_steam.png" title="icon_steam.png"></td>
+            <td><input type="radio" name="d5" value="ok">OK <input type="radio" name="d5" value="wrong">Wrong</td>
+        </tr>
+        <tr>
+            <td class="step">"Reinsert drip tray... [?] illuminates" (refill water)</td>
+            <td class="icon-cell pdf-icon">-</td>
+            <td class="icon-cell my-icon"><img src="images/icon_water.png" title="icon_water.png"></td>
+            <td><input type="radio" name="d6" value="ok">OK <input type="radio" name="d6" value="wrong">Wrong</td>
+        </tr>
+        <tr>
+            <td class="step">Descaling phase 3: "When [?] illuminates, proceed as follows"</td>
+            <td class="icon-cell pdf-icon">-</td>
+            <td class="icon-cell my-icon"><img src="images/icon_steam.png" title="icon_steam.png"></td>
+            <td><input type="radio" name="d7" value="ok">OK <input type="radio" name="d7" value="wrong">Wrong</td>
+        </tr>
+        <tr>
+            <td class="step">"When [?] is illuminated, empty drip tray..."</td>
+            <td class="icon-cell pdf-icon"><img src="images/picture_26.png" title="picture_26.png - drip tray"></td>
+            <td class="icon-cell my-icon"><img src="images/icon_drip_tray.png" title="icon_drip_tray.png"></td>
+            <td><input type="radio" name="d8" value="ok">OK <input type="radio" name="d8" value="wrong">Wrong</td>
+        </tr>
+        <tr>
+            <td class="step">"When [?] is illuminated, descaling programme is finished"</td>
+            <td class="icon-cell pdf-icon">-</td>
+            <td class="icon-cell my-icon"><img src="images/icon_power.png" title="icon_power.png"></td>
+            <td><input type="radio" name="d9" value="ok">OK <input type="radio" name="d9" value="wrong">Wrong</td>
+        </tr>
+    </table>
+
+    <h2>Spotted Issue</h2>
+    <p><strong>Descaling phase 1:</strong> The PDF (picture_24.png) shows the <em>water</em> icon, but I used <em>drip_tray</em> icon. This needs correction.</p>
+
+    <h2>Summary</h2>
+    <button onclick="generateSummary()" style="padding: 10px 20px; font-size: 16px; cursor: pointer; background: #4CAF50; color: white; border: none; border-radius: 4px;">Generate Summary</button>
+    <button onclick="copyToClipboard()" style="padding: 10px 20px; font-size: 16px; cursor: pointer; background: #2196F3; color: white; border: none; border-radius: 4px; margin-left: 10px;">Copy to Clipboard</button>
+    <pre id="summary" style="background: #f5f5f5; padding: 15px; margin-top: 15px; white-space: pre-wrap; border: 1px solid #ccc; min-height: 100px;"></pre>
+
+    <script>
+        const items = [
+            { name: "c1", desc: "Cleaning: 'cleaning symbol flashes'", used: "icon_clean.png" },
+            { name: "c2", desc: "Cleaning: 'Power flashes, Clean illuminates'", used: "icon_power.png + icon_clean.png" },
+            { name: "c3", desc: "Cleaning phase 1: 'When ? illuminates' (remove brewing unit)", used: "icon_drip_tray.png" },
+            { name: "c4", desc: "Cleaning phase 2: 'When ? illuminates' (fill water)", used: "icon_water.png" },
+            { name: "c5", desc: "Cleaning phase 3: 'When ? illuminates' (empty drip tray)", used: "icon_drip_tray.png" },
+            { name: "c6", desc: "Cleaning phase 4: 'middle bean is flashing'", used: "icon_beans.png" },
+            { name: "c7", desc: "Cleaning end: 'When ? illuminates' (finished)", used: "icon_power.png" },
+            { name: "d1", desc: "Descaling: 'descaling symbol flashes'", used: "icon_descale.png" },
+            { name: "d2", desc: "Descaling: 'Power flashes, Descale illuminates'", used: "icon_power.png + icon_descale.png" },
+            { name: "d3", desc: "Descaling phase 1: 'Empty drip tray, ? illuminates'", used: "icon_water.png (FIXED)" },
+            { name: "d4", desc: "Descaling phase 2: 'When ? illuminates'", used: "icon_steam.png" },
+            { name: "d5", desc: "Descaling phase 2: 'Turn valve, ? is flashing'", used: "icon_steam.png" },
+            { name: "d6", desc: "Descaling phase 2: 'Reinsert drip tray, ? illuminates' (refill)", used: "icon_water.png" },
+            { name: "d7", desc: "Descaling phase 3: 'When ? illuminates'", used: "icon_steam.png" },
+            { name: "d8", desc: "Descaling phase 3: 'When ? illuminated, empty drip tray'", used: "icon_drip_tray.png" },
+            { name: "d9", desc: "Descaling end: 'When ? illuminated' (finished)", used: "icon_power.png" },
+        ];
+
+        function generateSummary() {
+            let ok = [];
+            let wrong = [];
+            let unchecked = [];
+
+            items.forEach(item => {
+                const radios = document.getElementsByName(item.name);
+                let checked = false;
+                radios.forEach(radio => {
+                    if (radio.checked) {
+                        checked = true;
+                        if (radio.value === 'ok') {
+                            ok.push(item.desc);
+                        } else {
+                            wrong.push(`${item.desc} → currently: ${item.used}`);
+                        }
+                    }
+                });
+                if (!checked) {
+                    unchecked.push(item.desc);
+                }
+            });
+
+            let summary = "=== ICON REVIEW SUMMARY ===\n\n";
+
+            if (wrong.length > 0) {
+                summary += "WRONG (need correction):\n";
+                wrong.forEach((w, i) => summary += `${i+1}. ${w}\n`);
+                summary += "\n";
+            }
+
+            if (ok.length > 0) {
+                summary += `OK: ${ok.length} items correct\n\n`;
+            }
+
+            if (unchecked.length > 0) {
+                summary += "UNCHECKED:\n";
+                unchecked.forEach((u, i) => summary += `- ${u}\n`);
+            }
+
+            if (wrong.length === 0 && unchecked.length === 0) {
+                summary += "All items verified as correct!";
+            }
+
+            document.getElementById('summary').textContent = summary;
+        }
+
+        function copyToClipboard() {
+            const summary = document.getElementById('summary').textContent;
+            navigator.clipboard.writeText(summary).then(() => {
+                alert('Copied to clipboard!');
+            });
+        }
+    </script>
+</body>
+</html>
