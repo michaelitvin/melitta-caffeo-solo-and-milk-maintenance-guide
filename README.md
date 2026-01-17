@@ -2,6 +2,8 @@
 
 A visual, print-friendly maintenance guide for the Melitta Caffeo Solo & Milk coffee machine.
 
+**[View the Guide Online](https://michaelitvin.github.io/melitta-caffeo-solo-and-milk-maintenance-guide/)**
+
 ## Output
 
 [melitta_caffeo_solo_milk_maintenance_guide.html](melitta_caffeo_solo_milk_maintenance_guide.html) | [PDF](melitta_caffeo_solo_milk_maintenance_guide.pdf) - A single self-contained HTML file with all images embedded as base64. Covers:
